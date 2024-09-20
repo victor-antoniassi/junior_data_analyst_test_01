@@ -15,8 +15,6 @@ Simulei um processo simples de ETL, através de um [script](etl/etl.py) em Pytho
 │   └── analysis.ipynb
 ```
 
-## Dependências para execução do script/notebook
-
-## Dependências para execução do script/notebook
+### Dependências para execução do script/notebook
 Dentro do diretório dependencies se encontra os arquivos que listam os pacotes/libs necessárias para execução correta do script/notebook, [requirements.txt](dependencies/requirements.txt) pode ser utlizado na maioria dos gerenciadores de dependência/ambientes virtuais e o [Pipfile.lock](dependencies/Pipfile.lock) é utilizado apenas pelo gerenciador Pipenv.
 Após instalado as dependencias e ativado o ambiente virtual, é necessário antes de executar o .py, executar o comando ```prefect server start``` no terminal que você utiliza no seu sistema operacional,  esse comando ativa o Prefect Server de forma local, utilizei de forma bem simples a ferramenta/lib [Prefect](https://docs-3.prefect.io/3.0/get-started/quickstart) (ferramenta similar ao Apache Airflow), para orquestrar a execução do processo de ETL, utilizei principalmente para o uso dos recursos úteis de logs que o Prefect oferece, é possível acessar o dashboard que exibe mais informações da execução do script acessando a url localhost fornecida ao executar o servidor do Prefect. Para desligar o server, é só utilizar o comando control+c ou fechar a tela do terminal.

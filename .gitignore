@@ -1,5 +1,5 @@
 case.pdf
 Pipfile
 Pipfile.lock
-data/
+.ipynb_checkpoints
 !dependencies/Pipfile.lock

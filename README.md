@@ -1,20 +1,97 @@
-# Case/teste de analista de dados
-Simulei um processo simples de ETL, através de um [script](etl/etl.py) em Python, que extrai o [arquivo csv original](data/BASE_DADOS.csv), através de um [Google Drive](https://drive.google.com/file/d/1eoy8MlYin9PxbCjozT0kjPXPsq0RXEgY/view?usp=drive_link) (link público, não é necessário autenticação), faz pequenas transformação para ajustar os dados e os carrega em outros dois arquivos finais: Um [banco de dados DuckDB](data/db_games_sales.db) que foi utilizado na etapa de análise em um [jupyter notebook](notebook/analysis.ipynb) e um [arquivo csv](data/games_sales.csv) para uso no Power BI.
+# Video Game Sales Data Analysis 🎮
+
+This project demonstrates a complete ETL (Extract, Transform, Load) pipeline for video game sales data analysis, originally developed as part of a technical assessment for a Data Analyst position and now stands as part of my portfolio.
+
+## 📋 About the Project
+
+The project implements an ETL process using Python, where:
+
+- **Extract**: Automatic data extraction from a CSV file hosted on Google Drive
+- **Transform**: Data processing and cleaning
+- **Load**: Loading data in two different formats:
+  - DuckDB database for advanced analysis
+  - Formatted CSV for Power BI visualization
+
+## 🚀 Technologies Used
+
+- Python for data processing
+- Prefect for pipeline orchestration
+- DuckDB as analytical database
+- Jupyter Notebook for exploratory analysis
+- Power BI for data visualization
+
+## 📁 Project Structure
 
 ```
 ├── data
-│   ├── BASE_DADOS.csv
-│   ├── db_games_sales.db
-│   └── games_sales.csv
+│   ├── BASE_DADOS.csv          # Original dataset
+│   ├── db_games_sales.db       # Generated DuckDB database
+│   └── games_sales.csv         # Processed dataset for Power BI
 ├── dependencies
-│   ├── Pipfile.lock
-│   └── requirements.txt
+│   ├── Pipfile.lock           # Pipenv dependencies
+│   └── requirements.txt       # Pip dependencies
 ├── etl
-│   └── etl.py
+│   └── etl.py                # Main ETL script
 ├── notebook
-│   └── analysis.ipynb
+│   └── analysis.ipynb        # Analysis notebook
 ```
 
-### Dependências para execução do script/notebook
-Dentro do diretório dependencies se encontra os arquivos que listam os pacotes/libs necessárias para execução correta do script/notebook, [requirements.txt](dependencies/requirements.txt) pode ser utlizado na maioria dos gerenciadores de dependência/ambientes virtuais e o [Pipfile.lock](dependencies/Pipfile.lock) é utilizado apenas pelo gerenciador Pipenv.
-Após instalado as dependencias e ativado o ambiente virtual, é necessário antes de executar o .py, executar o comando ```prefect server start``` no terminal que você utiliza no seu sistema operacional,  esse comando ativa o Prefect Server de forma local, utilizei de forma bem simples a ferramenta/lib [Prefect](https://docs-3.prefect.io/3.0/get-started/quickstart) (ferramenta similar ao Apache Airflow), para orquestrar a execução do processo de ETL, utilizei principalmente para o uso dos recursos úteis de logs que o Prefect oferece, é possível acessar o dashboard que exibe mais informações da execução do script acessando a url localhost fornecida ao executar o servidor do Prefect. Para desligar o server, é só utilizar o comando control+c ou fechar a tela do terminal.
+## 🛠️ How to Run
+
+### Prerequisites
+
+1. Python 3.x installed
+2. Package manager pip or Pipenv
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone [REPOSITORY_URL]
+cd [REPOSITORY_NAME]
+```
+
+2. Install dependencies:
+
+With pip:
+```bash
+pip install -r dependencies/requirements.txt
+```
+
+Or with Pipenv:
+```bash
+pipenv install
+```
+
+### Running the Pipeline
+
+1. Start the Prefect server:
+```bash
+prefect server start
+```
+
+2. In another terminal, run the ETL script:
+```bash
+python etl/etl.py
+```
+
+> **Note**: The Prefect server will provide a local URL to access the dashboard with detailed information about pipeline execution. To stop the server, use Ctrl+C in the terminal.
+
+## 📊 Data Analysis
+
+- The analysis process is documented in the [Jupyter notebook](notebook/analysis.ipynb)
+- Original data can be accessed through this [Google Drive link](https://drive.google.com/file/d/1eoy8MlYin9PxbCjozT0kjPXPsq0RXEgY/view?usp=drive_link) (no authentication required)
+
+## 🔍 Prefect Features
+
+The project uses Prefect, a modern alternative to Apache Airflow, for:
+- Data pipeline orchestration
+- Execution monitoring
+- Detailed logging
+- Visual interface for tracking
+
+## 📝 Additional Notes
+
+- The original dataset is available in the `data` folder as `BASE_DADOS.csv`
+- The generated DuckDB database (`db_games_sales.db`) contains processed data ready for analysis
+- The `games_sales.csv` file is specifically formatted for use in Power BI

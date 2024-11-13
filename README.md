@@ -1,7 +1,6 @@
 # Video Game Sales Data Analysis 🎮
 
-This project demonstrates a complete ETL (Extract, Transform, Load) pipeline for video game sales data analysis, originally developed as part of a technical assessment for a Data Analyst position and now stands as part of my portfolio.
-
+This project demonstrates a complete ETL (Extract, Transform, Load) pipeline for video game sales data analysis, originally developed as part of a technical assessment for a Data Analyst position.
 ## 📋 About the Project
 
 The project implements an ETL process using Python, where:
@@ -10,7 +9,7 @@ The project implements an ETL process using Python, where:
 - **Transform**: Data processing and cleaning
 - **Load**: Loading data in two different formats:
   - DuckDB database for advanced analysis
-  - Formatted CSV for Power BI visualization
+  - Formatted CSV for use in Power BI
 
 ## 🚀 Technologies Used
 
@@ -18,7 +17,6 @@ The project implements an ETL process using Python, where:
 - Prefect for pipeline orchestration
 - DuckDB as analytical database
 - Jupyter Notebook for exploratory analysis
-- Power BI for data visualization
 
 ## 📁 Project Structure
 

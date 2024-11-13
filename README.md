@@ -8,8 +8,8 @@ The project implements an ETL process using Python, where:
 - **Extract**: Automatic data extraction from a CSV file hosted on Google Drive
 - **Transform**: Data processing and cleaning
 - **Load**: Loading data in two different formats:
-  - DuckDB database for advanced analysis
-  - Formatted CSV for use in Power BI
+  - A DuckDB database for advanced analysis
+  - A formatted CSV for use in Power BI
 
 ## 🚀 Technologies Used
 

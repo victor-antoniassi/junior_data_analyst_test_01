@@ -1,4 +1,4 @@
-# Video Game Sales Data Analysis 🎮
+# Video Game Sales Data Project 🎮
 
 This project demonstrates a complete ETL (Extract, Transform, Load) pipeline for video game sales data analysis, originally developed as part of a technical assessment for a Data Analyst position.
 ## 📋 About the Project

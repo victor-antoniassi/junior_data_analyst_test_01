@@ -40,8 +40,8 @@ Solution developed for a technical assessment that analyzed video game sales dat
 ### Installation
 1. Clone the repository:
 ```bash
-git clone [REPOSITORY_URL]
-cd [REPOSITORY_NAME]
+git clone https://github.com/victor-antoniassi/junior_data_analyst_test_01.git
+cd junior_data_analyst_test_01
 ```
 
 2. Install dependencies:

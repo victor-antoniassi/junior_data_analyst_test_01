@@ -1,41 +1,54 @@
 # Video Game Sales Analysis
-Solution built for a Data Analyst technical assessment. Read the complete challenge proposal [here](technical_challenge_proposal.md).
+> A data analysis project exploring video game sales data to evaluate potential gaming partnerships for a delivery platform.
 
 ## 📊 About
-Solution developed for a technical assessment that analyzed video game sales data to support gaming partnership decisions. The project demonstrates a complete ETL (Extract, Transform, Load) pipeline for video game sales data analysis, where:
-- **Extract**: Automatic data extraction from a CSV file hosted on Google Drive
-- **Transform**: Data processing and cleaning
-- **Load**: Loading data in two different formats:
-  - A DuckDB database for advanced analysis
-  - A formatted CSV for use in Power BI
+A solution developed for a Data Analyst technical challenge that processes and analyzes historical video game sales data. The project consists of an ETL pipeline that:
+- Extracts data from a CSV file hosted on Google Drive
+- Processes and cleans the data
+- Loads the results into:
+  - A DuckDB database for analysis
+  - A formatted CSV file for Power BI visualizations
 
-## 🛠️ Technical Stack
+The project uses Prefect for pipeline orchestration, providing:
+- Real-time execution monitoring
+- Detailed logging system
+- Visual dashboard for tracking
+- Automated workflow management
+
+### 📝 Analysis Performed
+The project answers the following business questions using SQL in Jupyter Notebook:
+1. Top 3 best-selling games in 2015
+2. Average sales volume for Xbox One in 2016
+3. Market share of Sports games compared to other genres since 2000
+4. Best-selling game in Japan during 1998
+5. **Additional Analysis**: Regional sales distribution (as percentages) for the top 25 games by global sales
+
+## 🛠️ Tech Stack
 - Python for data processing
+- DuckDB for data storage and SQL queries
 - Prefect for pipeline orchestration
-- DuckDB as analytical database
-- Jupyter Notebook for exploratory analysis
+- Jupyter Notebook for analysis
 
 ## 🗂️ Project Structure
 ```
 ├── README.md                   # Project documentation
-├── technical_challenge_proposal.md # Original challenge details
+├── technical_challenge_proposal.md # Original challenge proposal
+├── requirements.txt           # Python dependencies
 ├── data
 │   ├── BASE_DADOS.csv          # Original dataset
-│   ├── db_games_sales.db       # Generated DuckDB database
-│   └── games_sales.csv         # Processed dataset for Power BI
-├── dependencies
-│   ├── Pipfile.lock           # Pipenv dependencies
-│   └── requirements.txt       # Pip dependencies
+│   ├── db_games_sales.db       # DuckDB database with processed data
+│   └── games_sales.csv         # Processed dataset optimized for Power BI
 ├── etl
-│   └── etl.py                # Main ETL script
+│   └── etl.py                # ETL script
 ├── notebook
 │   └── analysis.ipynb        # Analysis notebook
 ```
 
-## 🔧 How to Run
+## 🚀 How to Run
+
 ### Prerequisites
-1. Python 3.x installed
-2. Package manager pip or Pipenv
+1. Python 3.x
+2. pip
 
 ### Installation
 1. Clone the repository:
@@ -45,13 +58,8 @@ cd junior_data_analyst_test_01
 ```
 
 2. Install dependencies:
-With pip:
 ```bash
-pip install -r dependencies/requirements.txt
-```
-Or with Pipenv:
-```bash
-pipenv install
+pip install -r requirements.txt
 ```
 
 ### Running the Pipeline
@@ -59,27 +67,18 @@ pipenv install
 ```bash
 prefect server start
 ```
-2. In another terminal, run the ETL script:
+
+> **Note**: After starting the server, you'll receive a local URL to access Prefect's dashboard where you can monitor the pipeline execution in real-time.
+
+2. In another terminal, run the ETL:
 ```bash
 python etl/etl.py
 ```
-> **Note**: The Prefect server will provide a local URL to access the dashboard with detailed information about pipeline execution. To stop the server, use Ctrl+C in the terminal.
 
-## 📊 Data Analysis
-- The analysis process is documented in the [Jupyter notebook](notebook/analysis.ipynb)
-- Original data can be accessed through this [Google Drive link](https://drive.google.com/file/d/1eoy8MlYin9PxbCjozT0kjPXPsq0RXEgY/view?usp=drive_link) (no authentication required)
+To stop the Prefect server, use Ctrl+C in the terminal.
 
-## 🔍 Prefect Features
-The project uses Prefect, a modern alternative to Apache Airflow, for:
-- Data pipeline orchestration
-- Execution monitoring
-- Detailed logging
-- Visual interface for tracking
-
-## 📝 Additional Notes
-- The original dataset is available in the `data` folder as `BASE_DADOS.csv`
-- The generated DuckDB database (`db_games_sales.db`) contains processed data ready for analysis
-- The `games_sales.csv` file is specifically formatted for use in Power BI
+## 📊 Data Sources
+- Original dataset available on [Google Drive](https://drive.google.com/file/d/1eoy8MlYin9PxbCjozT0kjPXPsq0RXEgY/view?usp=drive_link) (no authentication required)
+- All SQL queries and analysis are documented in the [analysis notebook](notebook/analysis.ipynb)
 
 ---
-*Note: This project was developed as part of a technical assessment for a Data Analyst position. Some implementation details go beyond the original requirements to demonstrate technical capabilities.*

@@ -16,7 +16,7 @@ The project uses Prefect for pipeline orchestration, providing:
 - Automated workflow management
 
 ### 📝 Analysis Performed
-The project answers the following business questions using SQL in Jupyter Notebook:
+The project answers the following questions using SQL in Jupyter Notebook:
 1. Top 3 best-selling games in 2015
 2. Average sales volume for Xbox One in 2016
 3. Market share of Sports games compared to other genres since 2000
